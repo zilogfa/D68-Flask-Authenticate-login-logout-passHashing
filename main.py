@@ -29,14 +29,14 @@ def load_user(user_id):
 
 
 
-##CREATE TABLE IN DB
+##CREATING TABLE IN DB
 class User(UserMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String(100), unique=True)
     password = db.Column(db.String(100))
     name = db.Column(db.String(1000))
-#Line below only required once, when creating DB. 
-db.create_all()
+
+# db.create_all()
 
 
 @app.route('/')
